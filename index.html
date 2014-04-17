@@ -8,11 +8,11 @@
 
         // Wait for device API libraries to load
         //
-        document.addEventListener("deviceready", onDeviceReady, false);
+        //document.addEventListener("deviceready", onDeviceReady, false);
 
         // device APIs are available
         //
-        function onDeviceReady() {
+        function getPhoto() {
             // Retrieve image file location from specified source
             navigator.camera.getPicture(
                 uploadPhoto,
@@ -42,9 +42,7 @@
         }
 
         function win(r) {
-            console.log("Code = " + r.responseCode);
-            console.log("Response = " + r.response);
-            console.log("Sent = " + r.bytesSent);
+            alert( "Code = " + r.responseCode + " | Response = " + r.response + " | Sent = " + r.bytesSent );
         }
 
         function fail(error) {
@@ -57,6 +55,6 @@
 </head>
 <body>
     <h1>Example</h1>
-    <p>Upload File</p>
+    <p onclick="getPhoto()">Upload Photo</p>
 </body>
 </html>
